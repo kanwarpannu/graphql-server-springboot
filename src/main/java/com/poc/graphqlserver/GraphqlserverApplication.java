@@ -21,8 +21,8 @@ public class GraphqlserverApplication {
     @Bean
     ApplicationRunner applicationRunner(AuthorRepository authorRepository, BookRepository bookRepository) {
         return args -> {
-            Author josh = authorRepository.save(new Author(1L, "Josh Long"));
-            Author mark = authorRepository.save(new Author(2L, "Mark John"));
+            Author josh = authorRepository.save(new Author(null, "Josh Long"));
+            Author mark = authorRepository.save(new Author(null, "Mark John"));
             bookRepository.saveAll(List.of(
                     new Book("Reactive Java", "Good Books", josh),
                     new Book( "Simple Java", "Good Reads", josh),

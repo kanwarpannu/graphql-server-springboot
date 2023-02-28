@@ -16,8 +16,8 @@ public class Book {
     private Author author;
 
     public Book(String title, String publisher, Author author) {
-        this.author = author;
         this.title = title;
+        this.author = author;
         this.publisher = publisher;
     }
 
