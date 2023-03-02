@@ -26,4 +26,4 @@ mutation{
 }
 ```
 4. Author controller uses pojos which are connected by jpa relations.  
-5. 
+5. Error Handler throws custom error messages for our self thrown exceptions.  
