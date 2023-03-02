@@ -1,6 +1,8 @@
 type Query {
     authors: [Author]
     authorById(id: ID!): Author
+    person(id:Int!): Person
+    getPaper(id:String!):[Paper]
 }
 
 type Author {
@@ -13,4 +15,9 @@ type Book {
     id: ID!
     title: String!
     publisher: String
+}
+
+type Paper{
+    id: String!
+    name: String!
 }

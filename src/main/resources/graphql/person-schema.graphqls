@@ -1,0 +1,15 @@
+type Person{
+    id: Int!
+    name: String!
+    address: [Address]
+    phone: String
+}
+type Address{
+    type: AddressType!
+    street: String
+}
+
+enum AddressType{
+    PRIMARY
+    SECONDARY
+}

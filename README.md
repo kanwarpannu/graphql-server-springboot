@@ -26,4 +26,6 @@ mutation{
 }
 ```
 4. Author controller uses pojos which are connected by jpa relations.  
-5. Error Handler throws custom error messages for our self thrown exceptions.  
+5. getPaper uses queryDsl.  
+6. Person Controller uses schema mapping to get fields.  
+7. Error Handler throws custom error messages for our self thrown exceptions.  
