@@ -25,3 +25,5 @@ mutation{
   }
 }
 ```
+4. Author controller uses pojos which are connected by jpa relations.  
+5. 

@@ -1,0 +1,11 @@
+mutation add_book($title: String!
+    $publisher: String!){
+    addBook(book : {
+        title : $title
+        authorId: 2
+        publisher: $publisher
+    }){
+        title
+        publisher
+    }
+}

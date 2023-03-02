@@ -2,6 +2,7 @@ package com.poc.graphqlserver.controller;
 
 import com.poc.graphqlserver.entity.Author;
 import com.poc.graphqlserver.entity.Book;
+import com.poc.graphqlserver.entity.BookInput;
 import com.poc.graphqlserver.repository.AuthorRepository;
 import com.poc.graphqlserver.repository.BookRepository;
 import org.springframework.graphql.data.method.annotation.Argument;
@@ -34,11 +35,9 @@ public class AuthorController {
 
     @MutationMapping
     Book addBook(@Argument BookInput book) {
-        Author author = authorRepository.findById(book.authorId()).orElseThrow(() -> new IllegalArgumentException("Unknown Author"));
-        Book book1 = new Book(book.title(), book.publisher(), author);
+        Author author = authorRepository.findById(book.getAuthorId()).orElseThrow(() -> new IllegalArgumentException("Unknown Author"));
+        Book book1 = new Book(book.getTitle(), book.getPublisher(), author);
         return bookRepository.save(book1);
     }
 
-    record BookInput(String title, String publisher, Long authorId) {
-    }
 }

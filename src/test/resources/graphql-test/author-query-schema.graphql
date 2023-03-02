@@ -1,0 +1,6 @@
+query get_author($id: ID!){
+    authorById(id : $id){
+        id
+        name
+    }
+}
