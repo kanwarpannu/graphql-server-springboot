@@ -24,7 +24,13 @@ public class PersonController {
         this.addressRepository = addressRepository;
     }
 
-    @QueryMapping(value = "person")
+    @QueryMapping(value = "persons")
+    public List<Person> getAllPersons() {
+        System.out.println("Querying all Persons");
+        return personRepository.findAll();
+    }
+
+    @QueryMapping(value = "personById")
     public Optional<Person> getPerson(@Argument(name = "id") Integer id) {
         System.out.println("Querying Person");
         return personRepository.findById(id);
@@ -41,7 +47,6 @@ public class PersonController {
         System.out.println("Fetching phone");
         throw new RuntimeException("Did not find phone data");
     }
-
 
     @MutationMapping(name = "createPerson")
     public Person addPerson(@Argument(name = "person") Person person) {

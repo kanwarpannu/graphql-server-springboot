@@ -1,0 +1,45 @@
+type Person{
+    id: Int!
+    name: String!
+    address: [Address]
+    phone: String
+}
+type Address{
+    id: Int!
+    personId: Int!
+    type: AddressType!
+    street: String
+}
+
+enum AddressType{
+    PRIMARY
+    SECONDARY
+}
+
+type Author {
+    id: ID!
+    name: String!
+    bookList: [Book]
+}
+
+type Book {
+    id: ID!
+    title: String!
+    publisher: String
+}
+
+input BookInput {
+    title: String!
+    publisher: String
+    authorId: ID!
+}
+
+input AddressInput{
+    personId: Int!
+    type: AddressType!
+    street: String!
+}
+input PersonInput{
+    id: Int!
+    name: String!
+}

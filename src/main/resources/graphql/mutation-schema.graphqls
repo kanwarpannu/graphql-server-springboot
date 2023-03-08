@@ -3,20 +3,3 @@ type Mutation {
     createPerson(person: PersonInput):Person
     createAddress(address: AddressInput): Address
 }
-
-input BookInput {
-    title: String!
-    publisher: String
-    authorId: ID!
-}
-
-input AddressInput{
-    id: Int!
-    personId: Int!
-    type: AddressType!
-    street: String!
-}
-input PersonInput{
-    id: Int!
-    name: String!
-}
